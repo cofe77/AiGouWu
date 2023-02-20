@@ -1,0 +1,26 @@
+.top-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 50px;
+  background-color: #eee;
+  align-items: center;
+}
+.top-nav .top-nav-back {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.top-nav .top-nav-back .back-icon {
+  width: 20px;
+  height: 20px;
+}
+.top-nav .top-nav-title {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+.top-nav .top-nav-more {
+  flex: 1;
+}

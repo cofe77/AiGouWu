@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "goods-detail",
+  "usingComponents": {
+    "top-nav": "../../components/TopNav/TopNav"
+  }
+}
