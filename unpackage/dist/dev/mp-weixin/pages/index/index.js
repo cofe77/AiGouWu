@@ -31,7 +31,12 @@ const _sfc_main = {
             b: banner.target,
             c: i
           };
-        })
+        }),
+        d: _ctx.triggered,
+        e: common_vendor.o((...args) => _ctx.onPulling && _ctx.onPulling(...args)),
+        f: common_vendor.o((...args) => _ctx.onRefresh && _ctx.onRefresh(...args)),
+        g: common_vendor.o((...args) => _ctx.onRestore && _ctx.onRestore(...args)),
+        h: common_vendor.o((...args) => _ctx.onAbort && _ctx.onAbort(...args))
       };
     };
   }

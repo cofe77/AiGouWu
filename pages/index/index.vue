@@ -1,7 +1,6 @@
 <template>
-	<!-- 首页头部 -->
-	<view class="header">
-		<view class="safe-area"></view>
+	<view class="home">
+		<!-- 首页头部 -->
 		<view class="top">
 			<view class="scan">
 				<i class="iconfont icon-scan" :style="{'--color':'#fff'}"></i>
@@ -30,46 +29,50 @@
 				<text>分类</text>
 			</view>
 		</view>
-	</view>
-	<view class="body">
-		<!-- 轮播 -->
-		<view class="banner">
-			<swiper class="swiper" circular :indicator-dots="true" >
-				<swiper-item
-					v-for="(banner,i) in initData.banner"
-					:key="i"
-				>
-					<navigator :url="banner.target" open-type="redirect">
-						<view class="swiper-item">
-							<image :src="banner.img" mode=""></image>
-						</view>
-					</navigator>
-				</swiper-item>
-			</swiper>
-		</view>
-		<!-- 保障条款 -->
-		<view class="safeguard">
-			111
-		</view>
-		<!-- 金刚区 -->
-		<view class="quick-access-area">
-			2222
-		</view>
-		<!-- 新人专享 -->
-		<view class="quick-access-area">
-			
-		</view>
-		<!-- 瓷片区 -->
-		<view class="quick-access-area">
-			
-		</view>
-		<!-- 好物精选 -->
-		<view class="quick-access-area">
-			
-		</view>
-		<!-- 猜你喜欢 -->
-		<view class="quick-access-area">
-			
+		<view class="body">
+			<scroll-view scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
+				:refresher-threshold="100" refresher-background="lightgreen" @refresherpulling="onPulling"
+				@refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
+				<!-- 轮播 -->
+				<view class="banner">
+					<swiper class="swiper" circular :indicator-dots="true" >
+						<swiper-item
+							v-for="(banner,i) in initData.banner"
+							:key="i"
+						>
+							<navigator :url="banner.target" open-type="redirect">
+								<view class="swiper-item">
+									<image :src="banner.img" mode=""></image>
+								</view>
+							</navigator>
+						</swiper-item>
+					</swiper>
+				</view>
+				<!-- 保障条款 -->
+				<view class="safeguard">
+					111
+				</view>
+				<!-- 金刚区 -->
+				<view class="quick-access-area">
+					2222
+				</view>
+				<!-- 新人专享 -->
+				<view class="quick-access-area">
+					
+				</view>
+				<!-- 瓷片区 -->
+				<view class="quick-access-area">
+					
+				</view>
+				<!-- 好物精选 -->
+				<view class="quick-access-area">
+					
+				</view>
+				<!-- 猜你喜欢 -->
+				<view class="quick-access-area">
+					
+				</view>
+			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -93,22 +96,25 @@
 </script>
 
 <style lang="less">
-	.header{
+	.home{
 		width: 750rpx;
-		height: 270rpx;
 		background-image: url('../../static/home-head.png');
 		background-size: 938rpx auto;
 		background-position: center -64rpx;
 		background-repeat: no-repeat;
-		top: 100rpx;
-		.safe-area{
-			height: 100rpx;
-		}
 		.top{
+			height: 70rpx;
 			display: flex;
 			flex-wrap: nowrap;
 			justify-content: space-between;
 			align-items: center;
+			position: sticky;
+			top: 100rpx;
+			z-index: 999;
+			background-image: url('../../static/home-head.png');
+			background-size: 938rpx auto;
+			background-position: center -64rpx;
+			background-repeat: no-repeat;
 			.scan{
 				width: 106rpx;
 				display: flex;
@@ -183,28 +189,26 @@
 				}
 			}
 		}
-	}
-	.body{
-		width: 750rpx;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		.banner{
-			border-radius: 6rpx;
-			overflow: hidden;
-			.swiper{
-				width: 702rpx;
-				height: 320rpx;
-				.swiper-item{
-					image{
-						width: 702rpx;
-						height: 320rpx;
+		.body{
+			width: 700rpx;
+			margin: 0 auto;
+			.banner{
+				border-radius: 6rpx;
+				overflow: hidden;
+				.swiper{
+					width: 702rpx;
+					height: 320rpx;
+					.swiper-item{
+						image{
+							width: 702rpx;
+							height: 320rpx;
+						}
 					}
 				}
 			}
-		}
-		.safeguard{
-			height: 9999rpx;
+			.safeguard{
+				height: 9999rpx;
+			}
 		}
 	}
 </style>
