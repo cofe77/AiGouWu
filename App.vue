@@ -14,12 +14,15 @@
 
 <style>
 	/*每个页面公共css */
-	@import url('./static/iconfont.css');
+	@import url('./static/font/iconfont.css');
 	::-webkit-scrollbar {
 		display: none;
 		width: 0 !important;
 		height: 0 !important;
 		-webkit-appearance: none;
 		background: transparent;
+	}
+	.app{
+		font-family: 'PingFangSC351cd2567024e2d';
 	}
 </style>

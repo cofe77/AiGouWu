@@ -170,17 +170,17 @@ export const homePageInitData: HomePageInitDataType = {
     banner: [
         {
             title: '111122',
-            img: '../../static/banner-1.png',
+            img: '../../static/img/home/banner-1.png',
             target: 'http://www.baidu.com'
         },
         {
             title: '111122',
-            img: '../../static/home-head.png',
+            img: '../../static/img/home/home-head.png',
             target: '321312'
         },
         {
             title: '111122',
-            img: '../../static/banner-1.png',
+            img: '../../static/img/home/banner-1.png',
             target: '321312'
         }
 		
