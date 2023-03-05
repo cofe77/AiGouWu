@@ -110,7 +110,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	.home{
 		width: 750rpx;
 		background-image: url('../../static/img/home/home-head.png');
@@ -127,9 +127,6 @@
 			background-position: center -64rpx;
 			background-repeat: no-repeat;
 			padding-bottom: 5rpx;
-			.safe-area{
-				height: 100rpx;
-			}
 			.top-context{
 				display: flex;
 				flex-wrap: nowrap;
@@ -185,7 +182,7 @@
 				flex-wrap: nowrap;
 				justify-content: space-around;
 				align-items: flex-start;
-				margin: 0 auto 10rpx auto;
+				margin: 20rpx auto;
 				.header-tab{
 					flex: auto;
 					white-space: nowrap;
@@ -239,8 +236,8 @@
 				display: flex;
 				flex-direction: row;
 				flex-wrap: nowrap;
-				justify-content: space-between;
-				margin: 10rpx 0;
+				justify-content: space-evenly;
+				margin: 20rpx 0;
 				.safeguard-item{
 					color: rgba(252, 90, 90, 1);
 					line-height: 28rpx;
@@ -256,6 +253,7 @@
 					}
 					.safeguard-content{
 						font-size: 20rpx;
+						margin: 0 10rpx;
 					}
 				}
 			}
