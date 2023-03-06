@@ -25,4 +25,7 @@
 	.app{
 		font-family: 'PingFangSC351cd2567024e2d';
 	}
+	.safe-area{
+		height: 100rpx;
+	}
 </style>
