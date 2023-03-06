@@ -29,7 +29,7 @@ export const SPU_1:SPUType = {
         salesVolume: 20,
         category: '电器/电视',
         channel: ProductChannel.OVERSEAS,
-        img: '',
+        img: '../../static/img/home/goods-1.png',
         desc: '',
         brand: {
             title: '嘉宝',
@@ -188,8 +188,28 @@ export const homePageInitData: HomePageInitDataType = {
     // 金刚键区
     quickAccess: [
         {
-            title: '',
-            icon: '',
+            title: '新人专享',
+            icon: '../../static/img/home/quick-access-around.png',
+            target: ''
+        },
+        {
+            title: '新人专享',
+            icon: '../../static/img/home/quick-access-around.png',
+            target: ''
+        },
+        {
+            title: '新人专享',
+            icon: '../../static/img/home/quick-access-around.png',
+            target: ''
+        },
+        {
+            title: '新人专享',
+            icon: '../../static/img/home/quick-access-around.png',
+            target: ''
+        },
+        {
+            title: '新人专享',
+            icon: '../../static/img/home/quick-access-around.png',
             target: ''
         }
     ],
@@ -202,40 +222,41 @@ export const homePageInitData: HomePageInitDataType = {
     promotion: {
         // 每日疯抢
         daily: {
+			describe: '10点场',
             // 开始时间
-            startTime: '',
+            startTime: '2023-2-28 10:00:00',
             // 链接
             url: 'string',
             // 图片
-            img: 'string',
+            img: '../../static/img/home/goods-1.png',
             // 颜色
-            color: 'string'
+            color: '#2FA3E7'
         },
         // 团购优惠
         groupon: {
             // 主标题
-            title: 'string',
+            title: '拼团特惠',
             // 副标题
-            subTitle: 'string',
+            subTitle: '约会好友 超值拼购',
             // 链接
             url: 'string',
             // 图片
-            img: 'string',
+            img: '../../static/img/home/goods-1.png',
             // 颜色
-            color: 'string'
+            color: 'blue'
         },
         // 新品推荐
         new: {
             // 主标题
-            title: 'string',
+            title: '新品推荐',
             // 副标题
-            subTitle: 'string',
+            subTitle: '给宝宝最好的',
             // 链接
             url: 'string',
             // 图片
-            img: 'string',
+            img: '../../static/img/home/goods-1.png',
             // 颜色
-            color: 'string'
+            color: 'green'
         }
     },
     // 好物精选区
@@ -249,14 +270,48 @@ export const homePageInitData: HomePageInitDataType = {
                 // 链接
                 url: 'string',
                 // 图片
-                img: 'string',
+                img: '../../static/img/home/goods-1.png',
                 // 颜色
-                color: 'string'
+                color: '#2FA3E7'
             },
             sub: [
                 SPU_1
             ]
-        }
+        },
+		{
+		    main: {
+		        // 主标题
+		        title: 'string',
+		        // 副标题
+		        subTitle: 'string',
+		        // 链接
+		        url: 'string',
+		        // 图片
+		        img: 'string',
+		        // 颜色
+		        color: 'string'
+		    },
+		    sub: [
+		        SPU_1
+		    ]
+		},
+		{
+		    main: {
+		        // 主标题
+		        title: 'string',
+		        // 副标题
+		        subTitle: 'string',
+		        // 链接
+		        url: 'string',
+		        // 图片
+		        img: 'string',
+		        // 颜色
+		        color: 'string'
+		    },
+		    sub: [
+		        SPU_1
+		    ]
+		},
     ],
     // 猜你喜欢区
     guessYouLike: [SPU_1],

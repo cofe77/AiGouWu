@@ -16,13 +16,11 @@ export type HomePageInitDataType = {
             target: string
 	}[],
     // 金刚键区
-    quickAccess: [
-        {
-            title: '',
-            icon: '',
-            target: ''
-        }
-    ],
+    quickAccess: {
+		title: string,
+		icon: string,
+		target: string
+	}[],
     // 新人专享
     newCustomer: {
         url: string,
@@ -32,6 +30,8 @@ export type HomePageInitDataType = {
     promotion: {
         // 每日疯抢
         daily: {
+            // 描述
+            describe: string,
             // 开始时间
             startTime: string,
             // 链接
@@ -69,23 +69,21 @@ export type HomePageInitDataType = {
         }
     },
     // 好物精选区
-    wellChosen: [
-        {
-            main: {
-                // 主标题
-                title: string,
-                // 副标题
-                subTitle: string,
-                // 链接
-                url: string,
-                // 图片
-                img: string,
-                // 颜色
-                color: string
-            },
-            sub: SPUType[]
-        }
-    ],
+    wellChosen: {
+		main: {
+			// 主标题
+			title: string,
+			// 副标题
+			subTitle: string,
+			// 链接
+			url: string,
+			// 图片
+			img: string,
+			// 颜色
+			color: string
+		},
+		sub: SPUType[]
+	}[],
     // 猜你喜欢区
     guessYouLike: SPUType[],
 }

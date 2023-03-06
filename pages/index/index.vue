@@ -68,24 +68,69 @@
 					</view>
 				</view>
 				<!-- 金刚区 -->
-				<view class="quick-access-area">
-					2222
+				<view class="quick-access">
+					<navigator 
+						v-for="(quick,i) in initData.quickAccess" 
+						:key="i" 
+						class="quick-item"
+						:url="quick.target"
+					>
+						<image :src="quick.icon" class="quick-item-icon"></image>
+						<text class="quick-item-title">{{quick.title}}</text>
+					</navigator>
 				</view>
 				<!-- 新人专享 -->
-				<view class="quick-access-area">
-					
+				<view class="new-customer">
+					<image src="../../static/img/home/新人专享.png" mode=""></image>
 				</view>
 				<!-- 瓷片区 -->
-				<view class="quick-access-area">
-					
+				<view class="promotion">
+					<view
+						class="promotion-item promotion-daily"
+						:style="{'--color':initData.promotion.daily.color}"
+					>
+						<text class="daily-title">每日疯抢</text>
+						<text class="daily-describe">{{initData.promotion.daily.describe}}</text>
+						<view class="promotion-btn" :style="{'--color':initData.promotion.daily.color}">GO</view>
+					</view>
+					<view
+						class="promotion-item promotion-groupon"
+						:style="{'--color':initData.promotion.groupon.color}"
+					>
+						<text class="promotion-title">{{initData.promotion.groupon.title}}</text>
+						<text class="promotion-subtitle">{{initData.promotion.groupon.subTitle}}</text>
+						<view class="promotion-btn" :style="{'--color':initData.promotion.groupon.color}">GO</view>
+					</view>
+					<view
+						class="promotion-item promotion-new"
+						:style="{'--color':initData.promotion.new.color}"
+					>
+						<text class="promotion-title">{{initData.promotion.new.title}}</text>
+						<text class="promotion-subtitle">{{initData.promotion.new.subTitle}}</text>
+						<view class="promotion-btn" :style="{'--color':initData.promotion.new.color}">GO</view>
+					</view>
 				</view>
 				<!-- 好物精选 -->
-				<view class="quick-access-area">
-					
+				<view class="well-chosen">
+					<text>好物精选</text>
+					<view
+						class="well-chosen-item"
+						v-for="(wellChosen,i) in initData.wellChosen"
+						:key="i"
+					>
+						<view class="well-chosen-img">
+							<image :src="wellChosen.main.img" mode=""></image>
+						</view>
+						<scroll-view scroll-x="true" >
+							<view>1</view>
+							<view>1</view>
+							<view>1</view>
+						</scroll-view>
+					</view>
 				</view>
 				<!-- 猜你喜欢 -->
-				<view class="quick-access-area">
-					
+				<view class="guess-you-like">
+					<text>猜你喜欢</text>
 				</view>
 			</scroll-view>
 		</view>
@@ -257,6 +302,70 @@
 					.safeguard-content{
 						font-size: 20rpx;
 					}
+				}
+			}
+			.quick-access{
+				display: flex;
+				flex-wrap: nowrap;
+				.quick-item{
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					.quick-item-icon{
+						width: 96rpx;
+						height: 96rpx;
+						display: block;
+					}
+					.quick-item-title{
+						font-size: 24rpx;
+						font-weight: 400;
+						color: rgba(51, 51, 51, 1);
+					}
+				}
+			}
+			.new-customer{
+				width: 750rpx;
+				height: 248rpx;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.promotion{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 203rpx 203rpx;
+				grid-auto-flow: row;
+				grid-gap: 14rpx;
+				.promotion-item{
+					border-radius: 10rpx;
+					background-color: var(--color);
+					.promotion-title{
+						display: block;
+					}
+					.promotion-subtitle{
+						display: block;
+						
+					}
+					.promotion-btn{
+						width: fit-content;
+						font-size: 28rpx;
+						background-color: red;
+					}
+				}
+				.promotion-daily{
+					grid-column: 1;
+					grid-row-start: 1;
+					grid-row-end: 3;
+				}
+				.promotion-groupon{
+					grid-column: 2;
+					
+				}
+				.promotion-new{
+					grid-column: 2;
+					
 				}
 			}
 		}
