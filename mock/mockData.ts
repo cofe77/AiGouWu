@@ -230,7 +230,7 @@ export const homePageInitData: HomePageInitDataType = {
             // 图片
             img: '../../static/img/home/goods-1.png',
             // 颜色
-            color: '#2FA3E7'
+            color: 'rgba(255,90,162,'
         },
         // 团购优惠
         groupon: {
@@ -243,7 +243,7 @@ export const homePageInitData: HomePageInitDataType = {
             // 图片
             img: '../../static/img/home/goods-1.png',
             // 颜色
-            color: 'blue'
+            color: 'rgba(132,204,255,'
         },
         // 新品推荐
         new: {
@@ -256,7 +256,7 @@ export const homePageInitData: HomePageInitDataType = {
             // 图片
             img: '../../static/img/home/goods-1.png',
             // 颜色
-            color: 'green'
+            color: 'rgba(255,147,42,'
         }
     },
     // 好物精选区

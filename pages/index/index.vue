@@ -87,27 +87,27 @@
 				<view class="promotion">
 					<view
 						class="promotion-item promotion-daily"
-						:style="{'--color':initData.promotion.daily.color}"
+						:style="{'--light-color':initData.promotion.daily.color+'0.1)','--dark-color':initData.promotion.daily.color+'1)'}"
 					>
-						<text class="daily-title">每日疯抢</text>
+						<text class="promotion-title daily-title">每日疯抢</text>
 						<text class="daily-describe">{{initData.promotion.daily.describe}}</text>
-						<view class="promotion-btn" :style="{'--color':initData.promotion.daily.color}">GO</view>
+						<view class="promotion-btn">GO</view>
 					</view>
 					<view
 						class="promotion-item promotion-groupon"
-						:style="{'--color':initData.promotion.groupon.color}"
+						:style="{'--light-color':initData.promotion.groupon.color+'0.15)','--dark-color':initData.promotion.groupon.color+'1)'}"
 					>
 						<text class="promotion-title">{{initData.promotion.groupon.title}}</text>
 						<text class="promotion-subtitle">{{initData.promotion.groupon.subTitle}}</text>
-						<view class="promotion-btn" :style="{'--color':initData.promotion.groupon.color}">GO</view>
+						<view class="promotion-btn">GO</view>
 					</view>
 					<view
 						class="promotion-item promotion-new"
-						:style="{'--color':initData.promotion.new.color}"
+						:style="{'--light-color':initData.promotion.new.color+'0.1)','--dark-color':initData.promotion.new.color+'1)'}"
 					>
 						<text class="promotion-title">{{initData.promotion.new.title}}</text>
 						<text class="promotion-subtitle">{{initData.promotion.new.subTitle}}</text>
-						<view class="promotion-btn" :style="{'--color':initData.promotion.new.color}">GO</view>
+						<view class="promotion-btn">GO</view>
 					</view>
 				</view>
 				<!-- 好物精选 -->
@@ -338,24 +338,31 @@
 				grid-gap: 14rpx;
 				.promotion-item{
 					border-radius: 10rpx;
-					background-color: var(--color);
+					background-color: var(--light-color);
+					padding: 30rpx;
 					.promotion-title{
 						display: block;
+						font-size: 30rpx;
+						font-weight: 600;
+						color: var(--dark-color);
 					}
 					.promotion-subtitle{
 						display: block;
-						
+						color: var(--dark-color);
 					}
 					.promotion-btn{
 						width: fit-content;
 						font-size: 28rpx;
-						background-color: red;
+						background-color: var(--dark-color);
 					}
 				}
 				.promotion-daily{
 					grid-column: 1;
 					grid-row-start: 1;
 					grid-row-end: 3;
+					.daily-title{
+						display: block;
+					}
 				}
 				.promotion-groupon{
 					grid-column: 2;
