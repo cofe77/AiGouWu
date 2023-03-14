@@ -25,25 +25,15 @@ export enum ProductChannel {
 // 商品
 export type ProductType = {
     name: string,// 商品名称
-    price: number,// 定价
-    selling: number,// 售价
-    salesVolume: number,// 销量
     category: string,// 分类，可以有多个
     channel: ProductChannel,// 3种：自营；第三方；海外
-    img: string,// 缩略图
-    desc: string,// 描述
     brand: BrandType,// 品牌
 }
 // 示例
 export const product_1: ProductType = {
     name: '',
-    price: 1,
-    selling: 2,
-    salesVolume: 20,
     category: '',
     channel: ProductChannel.OVERSEAS,
-    img: '',
-    desc: '',
     brand: brand_1
 }
 
@@ -52,12 +42,24 @@ export type SKUType = {
     title: string,//名称
     value: string,//值
     stock: number,//库存
+    price: number,
+    img: string,
+    discount: number,
+    desc: string,
+    selling: number,//销量
+    salesVolume: number,
 }
 //示例
 export const SKU_1: SKUType = {
     title: '颜色',
     value: '白',
+    price: 10,
     stock: 10,
+    img: '',
+    discount: 1,
+    desc: '',
+    selling: 2,//销量
+    salesVolume: 20,
 }
 
 // 评论

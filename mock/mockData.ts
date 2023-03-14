@@ -19,28 +19,25 @@ export const SKU_1: SKUType = {
     title: '颜色',
     value: '白',
     stock: 10,
+	price: 256,
+	discount: 0.8,
+	selling: 2,
+	salesVolume: 20,
+	img: '../../static/img/home/goods-1.png',
+	desc: '大自然原生态产地安全有保障无污染绿色健康营养丰富',
 }
 
 export const SPU_1:SPUType = {
     product: {
         name: '',
-        price: 1,
-        selling: 2,
-        salesVolume: 20,
         category: '电器/电视',
         channel: ProductChannel.OVERSEAS,
-        img: '../../static/img/home/goods-1.png',
-        desc: '',
         brand: {
             title: '嘉宝',
             logo: '',
         }
     },
-    SKU: {
-        title: '颜色',
-        value: '白',
-        stock: 10,
-    },
+    SKU: SKU_1,
     comment: []//评价
 }
 //示例
@@ -81,13 +78,8 @@ export const brand_1: BrandType = {
 // 示例
 export const product_1: ProductType = {
     name: '',
-    price: 1,
-    selling: 2,
-    salesVolume: 20,
     category: '电器/电视',
     channel: ProductChannel.OVERSEAS,
-    img: '',
-    desc: '',
     brand: brand_1
 }
 
@@ -270,12 +262,12 @@ export const homePageInitData: HomePageInitDataType = {
                 // 链接
                 url: 'string',
                 // 图片
-                img: '../../static/img/home/goods-1.png',
+                img: '../../static/img/home/wellChosen-1.png',
                 // 颜色
                 color: '#2FA3E7'
             },
             sub: [
-                SPU_1
+                SPU_1,SPU_1,SPU_1,SPU_1,SPU_1
             ]
         },
 		{
@@ -287,12 +279,12 @@ export const homePageInitData: HomePageInitDataType = {
 		        // 链接
 		        url: 'string',
 		        // 图片
-		        img: 'string',
+		        img: '../../static/img/home/wellChosen-2.png',
 		        // 颜色
 		        color: 'string'
 		    },
 		    sub: [
-		        SPU_1
+		        SPU_1,SPU_1,SPU_1,SPU_1,SPU_1
 		    ]
 		},
 		{
@@ -304,12 +296,12 @@ export const homePageInitData: HomePageInitDataType = {
 		        // 链接
 		        url: 'string',
 		        // 图片
-		        img: 'string',
+		        img: '../../static/img/home/wellChosen-3.png',
 		        // 颜色
 		        color: 'string'
 		    },
 		    sub: [
-		        SPU_1
+		        SPU_1,SPU_1,SPU_1,SPU_1,SPU_1
 		    ]
 		},
     ],

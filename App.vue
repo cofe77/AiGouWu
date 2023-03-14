@@ -22,7 +22,7 @@
 		-webkit-appearance: none;
 		background: transparent;
 	}
-	.app{
+	.home{
 		font-family: 'PingFangSC351cd2567024e2d';
 	}
 	.safe-area{
