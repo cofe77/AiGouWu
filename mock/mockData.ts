@@ -72,8 +72,49 @@ export const category_1: CategoryType = {
     ]
 }
 export const brand_1: BrandType = {
-    title: '嘉宝',
-    logo: '',
+    title: 'Wyeth/惠氏',
+    logo: '../../static/img/category/brand_logo.png',
+}
+export const brand_data = {
+	hot: [brand_1,brand_1,brand_1,brand_1,brand_1,brand_1],
+	list: [
+		{
+			letter: 'A',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		},
+		{
+			letter: 'B',
+			brands: [brand_1,brand_1,brand_1,brand_1,brand_1]
+		}
+	]
 }
 // 示例
 export const product_1: ProductType = {
@@ -306,7 +347,7 @@ export const homePageInitData: HomePageInitDataType = {
 		},
     ],
     // 猜你喜欢区
-    guessYouLike: [SPU_1],
+    guessYouLike: [SPU_1,SPU_1,SPU_1,SPU_1,SPU_1,SPU_1],
 }
 
 export const myPageInitData: MyPageInitDataType = {

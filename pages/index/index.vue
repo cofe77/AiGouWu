@@ -144,14 +144,7 @@
 			<!-- 猜你喜欢 -->
 			<view class="guess-you-like">
 				<text class="title">猜你喜欢</text>
-				<uni-list class="like-group">
-					<uni-list-item 
-						v-for="(a,i) in 20" 
-						:key="i" 
-						title=""
-						class="like-item"
-					>a</uni-list-item>
-				</uni-list>
+				<VerticalGoodsList :goodss="initData.guessYouLike" />
 			</view>
 		</scroll-view>
 	</view>
@@ -163,7 +156,6 @@
 
 	const initData = ref(homePageInitData)
 	const tabIndex = ref(0)
-	console.log(tabIndex.value);
 	function goToGoodsDetail(){
 		uni.navigateTo({
 			url: '/pages/goods-detail/goods-detail'
@@ -183,7 +175,7 @@
 		background-position: center -64rpx;
 		background-repeat: no-repeat;
 		.top{
-			height: 170rpx;
+			height: 180rpx;
 			position: sticky;
 			top: 0rpx;
 			z-index: 999;
@@ -447,7 +439,7 @@
 			margin: 0 auto;
 			.title{
 				display: block;
-				padding: 30rpx 24rpx;
+				padding: 50rpx 24rpx;
 				font-size: 48rpx;
 			}
 			.well-chosen-item{
@@ -460,6 +452,7 @@
 					white-space: nowrap;
 					overflow-x: auto;
 					scrollbar-width: 0;
+					margin: 30rpx 0;
 					.goods-item{
 						width: 200rpx;
 						display: inline-block;
@@ -484,12 +477,15 @@
 							word-break: break-all;
 							white-space: normal;
 							overflow: hidden;
+							font-weight: 600;
+							margin: 10rpx 0;
 						}
 						.chosen-price{
 							font-weight: 500;
 							.chosen-selling{
 								font-size: 28rpx;
 								color: #F83D3D;
+								margin-right: 15rpx;
 							}
 							.chosen-orgin-price{
 								font-size: 20rpx;
@@ -511,19 +507,6 @@
 				font-size: 48rpx;
 				background-color: #fff;
 			}
-			.like-group{
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-auto-flow: row;
-				grid-gap: 14rpx;
-				padding: 24rpx;
-				.like-item{
-					height: 516rpx;				
-					background-color: #fff;
-					border-radius: 20rpx;
-				}
-			}
-			
 		}
 	}
 </style>
