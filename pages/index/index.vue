@@ -144,7 +144,7 @@
 			<!-- 猜你喜欢 -->
 			<view class="guess-you-like">
 				<text class="title">猜你喜欢</text>
-				<VerticalGoodsList :goodss="initData.guessYouLike" />
+				<VerticalGoodsList v-if="initData" :goodss="initData.guessYouLike" />
 			</view>
 		</scroll-view>
 	</view>
@@ -319,10 +319,9 @@
 		.quick-access{
 			width: 702rpx;
 			margin: 0 auto;
-			display: flex;
-			flex-wrap: nowrap;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
 			.quick-item{
-				flex: 1;
 				display: flex;
 				flex-direction: column;
 				align-items: center;

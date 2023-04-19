@@ -89,9 +89,11 @@ const letterList = ref(Array.from(Array(26),(v,k)=>String.fromCharCode(k+65)))
 
 const initBrandData = () => {
 	api.getBrand().then(res=>{
+		console.log(res.data);
 		brands.value = res.data
 	})
 }
+
 initBrandData()
 const tapTab = (target) => {
 	currenTab.value = target
@@ -145,7 +147,9 @@ const tapTab = (target) => {
 		}
 		.main{
 			.nav{
-				.nav-item
+				.nav-item{
+					
+				}
 			}
 		}
 	}

@@ -19,13 +19,11 @@
 
 <script setup>
 import { toRefs } from "vue"
-import SKUType from '../../mock/type/entity/goods'
 const props = defineProps({
 	goodss: {
-		type: Object
+		type: Array
 	}
 })
-console.log(goodss);
 const { goodss } = toRefs(props)
 </script>
 
@@ -35,7 +33,8 @@ const { goodss } = toRefs(props)
 	grid-template-columns: 1fr 1fr;
 	grid-auto-flow: row;
 	grid-gap: 14rpx;
-	padding: 24rpx;
+	padding: 24rpx;				
+	background-color: #f2f2f2;
 	.item{
 		height: 516rpx;				
 		background-color: #fff;
