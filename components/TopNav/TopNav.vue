@@ -18,7 +18,7 @@ function back(){
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .top-nav{
 	display: flex;
 	flex-wrap: nowrap;

@@ -1,7 +1,17 @@
-import request from './http.js'
 import * as mockData  from '../mock/mockData'
+import * as home from './module/home.js'
+import * as brand from './module/brand.js'
+import * as cart from './module/cart.js'
+
+export const _api = {
+	...home,
+	...brand,
+	...cart
+}
+
 // 开发环境
 export const api = {
+	init(){ return mockFetch(mockData.homePageInitData) },
 	getBrand(){ return mockFetch(mockData.brand_data) },
 	getGuessLike(){ return mockFetch(mockData.homePageInitData.guessYouLike) }
 }
@@ -15,13 +25,4 @@ const mockFetch = (data:any) => {
 			})
 		},2000)
 	})
-}
-// mock环境
-const base_url = 'http://127.0.0.1:4523/m1/2564219-0-default'
-// 测试环境
-// const base_url = 'http://127.0.0.1:4523/m1/2564219-0-default'
-// 生产环境
-// const base_url = 'http://127.0.0.1:4523/m1/2564219-0-default'
-export const _api = {
-	getBrand(){ return request.get(base_url + '/brand') }
 }

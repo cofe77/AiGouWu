@@ -16,7 +16,7 @@
 				</view>
 			</view>
 		</view>
-		<scroll-view scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
+		<scroll-view v-if="initData" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
 			:refresher-threshold="100" refresher-background="transparent" @refresherpulling="onPulling"
 			@refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
 			<view class="category">
@@ -147,15 +147,26 @@
 				<VerticalGoodsList v-if="initData" :goodss="initData.guessYouLike" />
 			</view>
 		</scroll-view>
+		<view v-else>暂无数据</view>
 	</view>
 </template>
 
 <script setup>
 	import { ref } from 'vue'
-	import { homePageInitData } from '../../mock/mockData'
+import { api } from "../../api";
 
-	const initData = ref(homePageInitData)
+	const initData = ref({})
 	const tabIndex = ref(0)
+	
+	const init = () => {
+		api.init().then(res=>{
+		console.log(res.data);
+			initData.value = res.data
+		})
+	}
+	
+	init()
+	
 	function goToGoodsDetail(){
 		uni.navigateTo({
 			url: '/pages/goods-detail/goods-detail'
