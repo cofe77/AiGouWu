@@ -130,6 +130,7 @@
 							class="goods-item"
 							v-for="(chosen,i) in wellChosen.sub"
 							:key="i"
+							@touchend="goToGoodsDetail"
 						>
 							<image :src="chosen.SKU.img" mode=""></image>
 							<view class="chosen-desc">{{chosen.SKU.desc}}</view>
