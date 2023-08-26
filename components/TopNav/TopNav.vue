@@ -31,6 +31,7 @@ function back(){
 	height: 50px;
 	align-items: center;
 	justify-content: space-between;
+	background-color: #fff;
 	.top-nav-back{
 		width: 80rpx;
 		display: flex;

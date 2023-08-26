@@ -27,5 +27,6 @@
 	}
 	.safe-area{
 		height: 100rpx;
+		background-color: #fff;
 	}
 </style>

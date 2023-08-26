@@ -37,6 +37,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/post-order/post-order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"selectedColor": "#F83D3D",

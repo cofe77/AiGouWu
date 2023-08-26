@@ -1,3 +1,5 @@
 .hbuilderx
 .vite
+.uni_modules
 unpackage
+node_modules
