@@ -29,18 +29,18 @@
 			<view class="order">
 				<view class="header">
 					<text>我的订单</text>
-					<view class="more">
+					<view class="more" @tap="()=>goToMyOrder('all')">
 						<text>查看全部</text>
 						<view class="iconfont icon-back" style="transform: rotateY(180deg) scale(0.7);"></view>
 					</view>
 				</view>
 				<view class="content">
-					<view class="order-operator-item" v-for="(key,value) in 5">
+					<view class="order-operator-item" v-for="(value,key) in orderOperatorItem"  @tap="()=>goToMyOrder(value.key)">
 						<view class="icon">
 							<image src="../../static/img/home/quick-access-pointshop.png" mode=""></image>
 						</view>
 						<view class="title">
-							待付款
+							{{value.title}}
 						</view>
 					</view>
 				</view>
@@ -65,7 +65,38 @@
 </template>
 
 <script setup>
-	
+	const orderOperatorItem = [
+		{
+			title:"全部",
+			key:"all",
+			logo:""
+		},
+		{
+			title:"待付款",
+			key:"waitForPay",
+			logo:""
+		},
+		{
+			title:"待发货",
+			key:"waitForSend",
+			logo:""
+		},
+		{
+			title:"待收货",
+			key:"waitForRecive",
+			logo:""
+		},
+		{
+			title:"待评价",
+			key:"waitForComment",
+			logo:""
+		},
+	]
+	const goToMyOrder = (category) => {
+		uni.navigateTo({
+			url:"/pages/my-order/my-order?category="+category,
+		})
+	}
 </script>
 
 <style lang="less" scoped>
