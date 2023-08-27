@@ -12,7 +12,7 @@
 	}
 </script>
 
-<style>
+<style lang="less">
 	/*每个页面公共css */
 	@import url('./static/font/iconfont.css');
 	::-webkit-scrollbar {
@@ -28,5 +28,12 @@
 	.safe-area{
 		height: 100rpx;
 		background-color: #fff;
+	}
+	.red-btn{
+		color: #F83D3D!important;
+		background-color: #fff!important;
+		&::after{
+			border-color: #F83D3D;
+		}
 	}
 </style>

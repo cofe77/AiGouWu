@@ -74,7 +74,7 @@
 				<view class="price">
 					合计：<text class="total">￥98.8</text>
 				</view>
-				<view class="settle">
+				<view class="settle" @tap="goToPostOrder">
 					结算(1)
 				</view>
 			</view>
@@ -88,13 +88,19 @@
 	const guessYouLike = ref([])
 	
 	const initBrandData = () => {
-		api.getGuessLike().then(res=>{
+		api.getGuessLike().then(res=>{              
 			console.log(res.data);
 			guessYouLike.value = res.data
 		})
 	}
 	
 	initBrandData()
+	
+	const goToPostOrder = () => {
+		uni.navigateTo({
+			url:"/pages/post-order/post-order", 
+		})
+	}
 </script>
 
 <style lang="less" scoped>
