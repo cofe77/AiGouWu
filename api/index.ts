@@ -3,14 +3,14 @@ import * as home from './module/home.js'
 import * as brand from './module/brand.js'
 import * as cart from './module/cart.js'
 
-export const _api = {
+export const api = {
 	...home,
 	...brand,
 	...cart
 }
 
 // 开发环境
-export const api = {
+export const _api = {
 	init(){ return mockFetch(mockData.homePageInitData) },
 	getBrand(){ return mockFetch(mockData.brand_data) },
 	getGuessLike(){ return mockFetch(mockData.homePageInitData.guessYouLike) }

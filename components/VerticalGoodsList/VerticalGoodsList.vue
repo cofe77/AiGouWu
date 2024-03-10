@@ -19,12 +19,16 @@
 
 <script setup>
 import { toRefs } from "vue"
+import { onLoad } from '@dcloudio/uni-app'
 const props = defineProps({
 	goodss: {
 		type: Array
 	}
 })
 const { goodss } = toRefs(props)
+onLoad(()=>{
+	console.log(2222);
+})
 </script>
 
 <style lang="less" scoped>

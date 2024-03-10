@@ -37,7 +37,7 @@ function back(){
 		display: flex;
 		justify-content: center;
 		.back-icon{
-			transform: scale(0.8);
+			transform: scale(0.2);
 		}
 	}
 	.top-nav-title{

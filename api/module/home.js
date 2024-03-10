@@ -1,3 +1,3 @@
 import request from '../http.js'
 
-export const init = () => request.get('/home/init')
+export const init = (type) => request.get('/home/init?type='+type)

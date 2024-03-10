@@ -1,5 +1,5 @@
 <template>
-	<view class="order-item" v-for="(item,index) in 3">
+	<view class="order-item">
 		<view class="item-image">
 			<image src="../../static/img/home/goods-1.png" mode=""></image>
 		</view>

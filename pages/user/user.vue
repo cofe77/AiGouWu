@@ -43,6 +43,14 @@
 							{{value.title}}
 						</view>
 					</view>
+					<view class="order-operator-item" @tap="goToAfterSalesAndRefund">
+						<view class="icon">
+							<image src="../../static/img/home/quick-access-pointshop.png" mode=""></image>
+						</view>
+						<view class="title">
+							退款/售后
+						</view>
+					</view>
 				</view>
 			</view>
 			<view class="more">
@@ -67,11 +75,6 @@
 <script setup>
 	const orderOperatorItem = [
 		{
-			title:"全部",
-			key:"all",
-			logo:""
-		},
-		{
 			title:"待付款",
 			key:"waitForPay",
 			logo:""
@@ -95,6 +98,11 @@
 	const goToMyOrder = (category) => {
 		uni.navigateTo({
 			url:"/pages/my-order/my-order?category="+category,
+		})
+	}
+	const goToAfterSalesAndRefund = () => {
+		uni.navigateTo({
+			url:"/pages/afterSales-refund/afterSales-refund",
 		})
 	}
 </script>

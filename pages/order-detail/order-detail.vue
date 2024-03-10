@@ -23,7 +23,12 @@
 				</view>
 			</view>
 			<view class="body">
-				<GoodsItem></GoodsItem>
+				<view class="">
+					<GoodsItem></GoodsItem>
+					<view class="" style="text-align: right;">
+						<button type="default" size="mini" @tap="goToAfterSales()">申请售后</button>
+					</view>
+				</view>
 			</view>
 		</view>
 		<view class="bill">
@@ -75,26 +80,37 @@
 		</view>
 		<view class="operator">
 			<button type="default" size="mini">联系客服</button>
-			<button type="default" size="mini">查看物流</button>
-			<button type="default" size="mini" class="red-btn" @tap="goToCommentList">评价</button>
+			<button v-show="category === 'waitForPay'" type="default" size="mini">关闭订单</button>
+			<button v-show="category === 'waitForPay'" type="default" size="mini">立即支付</button>
+			<button v-show="category === 'waitForSend'" type="default" size="mini">催促发货</button>
+			<button v-show="category === 'waitForRecive'" type="default" size="mini">查看物流</button>
+			<button v-show="category === 'waitForRecive'" type="default" size="mini">确认收货</button>
+			<button v-show="category === 'waitForComment'" type="default" size="mini" @tap="goToCommentList">评价</button>
 		</view>
 	</view>
 </template>
 
 <script setup>
-	const props = defineProps({
-		orderId: String
-	})
-	const init = () => {
-		
-	}
-	init()
+import { ref } from 'vue';
+const props = defineProps({
+	orderId: String
+})
+const order = ref({})
+const init = () => {
 	
-	const goToCommentList = () => {
-		uni.navigateTo({
-			url:"/pages/order-comment-list/order-comment-list",
-		})
-	}
+}
+init()
+
+const goToCommentList = () => {
+	uni.navigateTo({
+		url:"/pages/order-comment-list/order-comment-list",
+	})
+}
+const goToAfterSales = () => {
+	uni.navigateTo({
+		url:"/pages/after-sales/after-sales",
+	})
+}
 </script>
 
 <style lang="less" scoped>

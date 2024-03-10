@@ -234,7 +234,7 @@
 	}
 	.operator{
 		position: fixed;
-		bottom: 88rpx;
+		bottom: 0rpx;
 		width: 100%;
 		height: 98rpx;
 		background-color: #fff;

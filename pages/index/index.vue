@@ -9,16 +9,14 @@
 				</view>
 				<view class="search">
 					<i class="iconfont icon-search" :style="{'--color':'rgba(153, 153, 153, 1)'}"></i>
-					<input type="text" placeholder="万千商品,等你来采购">
+					<input class="search-input" type="text" placeholder="万千商品,等你来采购">
 				</view>
 				<view class="msg">
 					<i class="iconfont icon-msg" :style="{'--color':'#fff'}"></i>
 				</view>
 			</view>
 		</view>
-		<scroll-view v-if="initData" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
-			:refresher-threshold="100" refresher-background="transparent" @refresherpulling="onPulling"
-			@refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
+		<scroll-view v-if="loaded" scroll-y="true">
 			<view class="category">
 				<scroll-view class="header-tab" scroll-x="true">
 					<view
@@ -148,35 +146,51 @@
 				<VerticalGoodsList v-if="initData" :goodss="initData.guessYouLike" />
 			</view>
 		</scroll-view>
-		<view v-else>暂无数据</view>
+		<IndexSkeleton v-else />
 	</view>
 </template>
 
 <script setup>
-	import { ref } from 'vue'
+import { ref } from 'vue';
 import { api } from "../../api";
+import { onPullDownRefresh,onLoad } from '@dcloudio/uni-app'
+import IndexSkeleton from "../../components/Skeleton/index-skeleton.vue"
 
-	const initData = ref({})
-	const tabIndex = ref(0)
-	
-	const init = () => {
-		api.init().then(res=>{
+const initData = ref({})
+const loaded = ref(false)
+const tabIndex = ref(0)
+
+onLoad(()=>{
+	console.log(111);
+	init("home")
+})
+const init = (type) => {
+	loaded.value=false
+	api.init(type).then(res=>{
 		console.log(res.data);
-			initData.value = res.data
-		})
-	}
-	
-	init()
-	
-	function goToGoodsDetail(){
-		uni.navigateTo({
-			url: '/pages/goods-detail/goods-detail'
-		})
-	}
-	const clickTab = (a) => {
-		tabIndex.value = a
-		console.log(tabIndex.value);
-	}
+		initData.value = res.data
+		loaded.value=true
+	})
+}
+onPullDownRefresh(()=>{
+	console.log('refresh');
+	init(initData.value.category[tabIndex]);
+	setTimeout(function () {
+		uni.stopPullDownRefresh();
+	}, 1000);
+}) 
+
+function goToGoodsDetail(){
+	uni.navigateTo({
+		url: '/pages/goods-detail/goods-detail'
+	})
+}
+const clickTab = (index) => {
+	if(index === tabIndex.value) return;
+	tabIndex.value = index
+	init(initData.value.category[tabIndex]);
+	console.log(initData.value.category[index]);
+}
 </script>
 
 <style lang="less" scoped>
@@ -218,7 +232,7 @@ import { api } from "../../api";
 						left: 24rpx;
 						font-size: 30rpx; 
 					}
-					input{
+					.search-input{
 						color: rgba(153, 153, 153, 1);
 						height: 60rpx;
 						border-radius: 30rpx;

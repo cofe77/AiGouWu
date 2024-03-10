@@ -1,7 +1,15 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3887467 */
+  font-family: "iconfont";
   src: url('/static/font/iconfont.ttf') format('truetype');
 }
+@font-face{
+	font-family:HarmonyOS_Sans_SC_Regular;
+	font-style:normal;
+	font-display:swap;
+	src:url(/static/font/HarmonyOS_Sans_SC_Regular.woff2) format('woff2')
+}
+/* *{font-family:HarmonyOS_Sans_SC_Regular} */
+body {font-family: HarmonyOS!important;}
 
 .iconfont {
   font-family: "iconfont" !important;

@@ -18,9 +18,7 @@
 						<view class="header">
 							<view class="order-number">
 								<text>111111111111111111111111</text>
-								<view class="">
-									<button type="default" size="mini">删除订单</button>
-								</view>
+								
 							</view>
 							<view class="info">
 								<view class="address">
@@ -45,7 +43,13 @@
 							</view>
 						</view>
 						<view class="operator">
-							<button type="default" size="mini">删除订单</button>
+							<button v-show="category === 'all'" type="default" size="mini">删除订单</button>
+							<button v-show="category === 'waitForPay'" type="default" size="mini">关闭订单</button>
+							<button v-show="category === 'waitForPay'" type="default" size="mini">立即支付</button>
+							<button v-show="category === 'waitForSend'" type="default" size="mini">催促发货</button>
+							<button v-show="category === 'waitForRecive'" type="default" size="mini">查看物流</button>
+							<button v-show="category === 'waitForRecive'" type="default" size="mini">确认收货</button>
+							<button v-show="category === 'waitForComment'" type="default" size="mini">查看物流</button>
 						</view>
 					</view>
 				</view>

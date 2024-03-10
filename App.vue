@@ -22,12 +22,9 @@
 		-webkit-appearance: none;
 		background: transparent;
 	}
-	.home{
-		font-family: 'PingFangSC351cd2567024e2d';
-	}
 	.safe-area{
 		height: 100rpx;
-		background-color: #fff;
+		// background-color: #fff;
 	}
 	.red-btn{
 		color: #F83D3D!important;

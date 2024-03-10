@@ -22,8 +22,8 @@ request.interceptors.request.use((config) => {
 request.interceptors.response.use((response) => {
   // 统一处理响应,返回Promise以便链式调用
   if (response.status === 200) {
-    const { data } = response;
-    return Promise.resolve(data);
+	const { data } = response;
+	return Promise.resolve(data);
   }
 });
 
